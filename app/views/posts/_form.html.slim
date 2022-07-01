@@ -1,0 +1,7 @@
+h5 enter the name, then the body
+
+.form
+  = simple_form_for(@post) do |f|
+    = f.text_field :title
+    = f.text_field :body
+    = f.button :submit, class:"btn btn-primary", style:"float:left; margin-right:15px;"

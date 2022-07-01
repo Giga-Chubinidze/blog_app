@@ -1,0 +1,12 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+  .container-fluid
+    .navbar-brand= link_to "Home", root_path
+    - if user_signed_in?
+      .navbar-brand= link_to "Current User: " + current_user[:email], root_path
+
+      .navbar-brand= link_to "New Post", new_post_path
+
+      .navbar-brand= link_to "Sign out", destroy_user_session_path, method: :delete
+    - else
+      .navbar-brand= link_to "Sign in", new_user_session_path
+      .navbar-brand= link_to "Sign up", new_user_registration_path
