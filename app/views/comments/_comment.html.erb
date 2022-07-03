@@ -1,0 +1,13 @@
+<div class="comment-<%= comment.id %> container"
+    style="border: 1px solid black; padding: 1em; margin: 1em;">
+    <%= comment.user.email %>
+  <% if current_user == comment.user  %>
+    <div class="btn-group float-end">
+      <%= link_to "Edit", nil, remote: true, class:"btn btn-warning"%>
+      <%= button_to "delete", [post, comment], class:"btn btn-danger", method: :delete, style:"margin-left: 5px;" %>
+    </div>
+ <% end %>
+    <hr>
+      <%= comment.body %>
+
+</div>
