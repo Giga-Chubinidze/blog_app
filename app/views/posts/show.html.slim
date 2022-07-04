@@ -1,0 +1,30 @@
+.content
+  h1
+    = @post.title
+  hr
+  p
+    = @post.body
+  small
+    = @post.user.email
+  br
+  br
+  small
+    = link_to "Back", root_path, class:"btn btn-primary"
+  - if current_user == @post.user
+    small
+      = link_to "Edit", edit_post_path(@post), class:"btn btn-primary", style:"margin-left:15px;"
+    small
+      = link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-primary", style:"margin-left:15px;"
+br
+.watcher
+  = render "comments/form", post: @post, comment: @comments
+  h2
+    | Comments
+  hr
+  - @comments.each do |comment|
+    = render "comments/comment", post: @post, comment: comment
+
+  br
+br
+br
+br

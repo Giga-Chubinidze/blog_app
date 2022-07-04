@@ -1,12 +1,18 @@
+.nav
+  .nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+    .container-fluid
+      - if user_signed_in?
+        .navbar-brand= link_to "Current User: " + current_user[:email], root_path, style:"color:white;"
+    = link_to(locale: :ka) do
+      %img.c-icon.ms-3.mt-2{:alt => "geoflag", :src => "https://cdn.countryflags.com/thumbs/georgia/flag-400.png", :width => "30", style:"padding-right:2px;"}
 
-%footer
-  .container-fluid
-    %ul
-      .navbar-brand= link_to 'Source Code', 'https://github.com/GigaChubinidze/rails_blog_app', target:"_blank"
-      
+    = link_to(locale: :en) do
+      %img.c-icon.ms-3.mt-2{:alt => "enflag", :src => "https://cdn.countryflags.com/thumbs/united-kingdom/flag-400.png", :width => "30", :height => "21", style:"padding-right:2px;"}
+
+  
 
 :css
-  footer {
+  .nav {
      position: fixed;
      height: XXX;
      bottom: 0;
@@ -14,7 +20,7 @@
      background-color: orange;
      left: 0px;
   }
-  ul {
-     text-align: center;
-     margin-right: 70px
-  }
+
+  
+
+

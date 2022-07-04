@@ -5,7 +5,9 @@ gem 'haml'
 gem 'simple_form'
 gem 'devise'
 gem 'tzinfo-data'
-
+gem 'slim-rails'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use pg as the database for Active Record

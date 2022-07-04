@@ -1,7 +1,11 @@
-%h1 Posts:
+%h1{style: "text-align:center;"} Posts:
 - @posts.each do |post|
-  .post
+  .post{style: "padding-top:30px; text-align:center;"}
     %h2= link_to post.title, post
     %small
-      Created by:
+      Created by: 
       = post.user.email
+%hr
+= will_paginate @posts
+= t(:hello)
+
