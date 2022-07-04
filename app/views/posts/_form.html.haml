@@ -1,7 +1,14 @@
-%h5 enter the name, then the body
-
-.form
-  = simple_form_for(@post) do |f|
-    = f.text_field :title
-    = f.text_field :body
-    = f.button :submit, class:"btn btn-primary", style:"float:left; margin-right:15px;"
+.columns
+  .column.is-8.is-centered
+    = simple_form_for @post do |f|
+      = f.error_notification
+      .columns
+        .field.column.is-9
+          .control
+            = f.input :title, :label => t("Title"), required: false, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" }
+      .field
+        .control
+          = f.input :body, :label => "Body", required: false, input_html: { class:"textarea" }, wrapper: false, label_html: { class:"label" }
+      .field.is-grouped
+        .control
+          = f.button :submit, "Create",  class: 'btn btn-success'
