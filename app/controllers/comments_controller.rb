@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_post
-    
+
     def create
         @comment = @post.comments.create(comment_params)
         @comment.user = current_user
@@ -29,4 +29,5 @@ class CommentsController < ApplicationController
         def set_post
             @post = Post.find(params[:post_id])
         end
+
 end

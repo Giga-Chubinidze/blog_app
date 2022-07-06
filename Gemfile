@@ -8,6 +8,8 @@ gem 'tzinfo-data'
 gem 'slim-rails'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
+gem 'draper'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use pg as the database for Active Record
@@ -47,7 +49,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pg'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen'

@@ -4,6 +4,6 @@
       p
         - form.label :body
         br
-        = form.text_area :body, class: "form-control", placeholder: "new comment"
+        = form.text_area :body, class: "form-control", placeholder: t(:new_comment), style:"background-color: #9edec6;"
       p
-        = form.submit "create", class: "btn btn-warning"
+        = form.submit t(:create), class: "btn btn-warning"

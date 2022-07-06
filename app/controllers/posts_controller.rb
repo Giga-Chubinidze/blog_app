@@ -3,12 +3,14 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :is_owner, only: [:edit, :destroy]
 
+  decorates_assigned :posts, :post
+
   def index
     @posts = Post.all.order("created_at DESC").paginate(page: params[:page], per_page: 3)
   end
 
   def show
-    @comments = @post.comments
+    @comments = @post.comments.paginate(page: params[:page]||1,per_page: 3)
   end
 
   def new
