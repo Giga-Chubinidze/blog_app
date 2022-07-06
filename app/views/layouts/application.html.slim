@@ -6,9 +6,9 @@ head
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
 body
-  = render "layouts/navbar"
-  .container
-    - flash.each do |name, msg|
-      = content_tag :div, msg, class: "alert alert-success"
-    = yield
-  = render "layouts/footer"
+  .main-container
+    = render "layouts/navbar"
+    .container
+      - flash.each do |name, msg|
+        = content_tag :div, msg, class: "alert alert-success"
+      = yield

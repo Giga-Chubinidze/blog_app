@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :posts do 
       resources :comments
     end
+    get "/profile/:id", to: "user_profile#index", as: :profile
   end
 end
