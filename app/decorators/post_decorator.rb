@@ -17,7 +17,7 @@ class PostDecorator < ApplicationDecorator
 
   def delete_if_author
     if h.current_user == model.user
-      h.link_to(h.t(:delete), @post, method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-primary",  style:"margin-left:15px;")
+      h.button_to(h.t(:delete), @post, method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-primary", style:"position:relative; left:145px; bottom:38px;")
     end
   end
 
