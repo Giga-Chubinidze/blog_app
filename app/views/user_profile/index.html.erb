@@ -1,3 +1,5 @@
+
+
 <div class="container rounded bg-aquamarine mt-5 mb-5" style="background-color:#9edec6;">
     <div class="row">
         <div class="col-md-3 border-right">
@@ -6,6 +8,7 @@
               <br>
               <span class="font-weight-bold">username</span>
               <span class="text-black-50"><%= @user.email %></span>
+                <%= link_to image_tag(@user.avatar_url, style:"width:200px; height:auto;"), @user if @user.avatar_url %>
               <span> </span>
             </div>
         </div>
